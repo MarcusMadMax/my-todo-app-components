@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css');
+
+
+$color1: #05AFF2;
+$color2: #05C7F2;
+$color3: #05DBF2;
+$color4: #05F2F2;
+
+$dark1: #182226;
+$dark2: #3B5159;
+$dark3: #69868C;
+$dark4: #A4BDBF;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    list-style-type: none;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+.wrap{
+    position: relative;
+    background-color: $dark2;
+    width: 40vw;
+    margin: 10em auto;
+    padding: 2em;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 5px 2px $color1;
+
+    .container{
+
+        .todos{
+            background-color: $dark1;
+        }
+    }
+}
+
