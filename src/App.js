@@ -29,6 +29,7 @@ class App extends Component {
           </div>
           <div className="container todo">
             <h1>Go surfing</h1>
+            <i class="far fa-edit"></i>
             <i className="far fa-trash-alt"></i>
           </div>
         </div>
