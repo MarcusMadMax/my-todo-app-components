@@ -35,10 +35,63 @@ body{
 
     .container{
         background-color: $dark1;
-        box-shadow: 0 0 2px 5px $color1;
+        margin: 3em;
+        padding: 1em;
+        box-sizing: border-box;
 
         .formGroup{
-            border: 1px solid red;
+
+            input[type="text"], select{
+                font-size: 2em;
+                color: $color2;
+                width: 100%;
+                padding: .5em;
+                box-sizing: border-box;
+                background: transparent;
+                box-shadow: 0 0 2px 5px $color1;
+
+                &:focus{
+                    outline: none;
+                }
+            }
+
+            ::placeholder{
+                color: $color2;
+            }
+
+            select{
+                margin: .5em 0;
+            }
+        }
+
+        button[type="submit"]{
+            font-size: 1em;
+            color: white;
+            padding: .5em;
+            box-sizing: border-box;
+            background: $color1;
+            cursor: pointer;
+
+            &:hover{
+                padding: .5em;
+                box-sizing: border-box;
+                background: transparent;
+                box-shadow: 0 0 2px 5px $color1;
+                color: $color2;
+            }
+        }
+    }
+
+    .todo{
+        color: $color2;
+
+        .edit{
+            display: flex;
+            justify-content: space-between;
+
+            i{
+                font-size: 2em;
+            }
         }
     }
 }

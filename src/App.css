@@ -25,11 +25,82 @@ body {
 
 .wrap .container {
   background-color: #182226;
+  margin: 3em;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrap .container .formGroup input[type="text"], .wrap .container .formGroup select {
+  font-size: 2em;
+  color: #05C7F2;
+  width: 100%;
+  padding: .5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: transparent;
   -webkit-box-shadow: 0 0 2px 5px #05AFF2;
           box-shadow: 0 0 2px 5px #05AFF2;
 }
 
-.wrap .container .formGroup {
-  border: 1px solid red;
+.wrap .container .formGroup input[type="text"]:focus, .wrap .container .formGroup select:focus {
+  outline: none;
+}
+
+.wrap .container .formGroup ::-webkit-input-placeholder {
+  color: #05C7F2;
+}
+
+.wrap .container .formGroup :-ms-input-placeholder {
+  color: #05C7F2;
+}
+
+.wrap .container .formGroup ::-ms-input-placeholder {
+  color: #05C7F2;
+}
+
+.wrap .container .formGroup ::placeholder {
+  color: #05C7F2;
+}
+
+.wrap .container .formGroup select {
+  margin: .5em 0;
+}
+
+.wrap .container button[type="submit"] {
+  font-size: 1em;
+  color: white;
+  padding: .5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #05AFF2;
+  cursor: pointer;
+}
+
+.wrap .container button[type="submit"]:hover {
+  padding: .5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: transparent;
+  -webkit-box-shadow: 0 0 2px 5px #05AFF2;
+          box-shadow: 0 0 2px 5px #05AFF2;
+  color: #05C7F2;
+}
+
+.wrap .todo {
+  color: #05C7F2;
+}
+
+.wrap .todo .edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrap .todo .edit i {
+  font-size: 2em;
 }
 /*# sourceMappingURL=App.css.map */

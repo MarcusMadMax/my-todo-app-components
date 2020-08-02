@@ -21,7 +21,11 @@ class App extends Component {
                 <label htmlFor="status"></label>
                 <select name="status" id="status">
                   <option value="status">please select</option>
-                  <option value=""></option>
+                  <option value="urgent">Urgent</option>
+                  <option value="medium">Medium urgent</option>
+                  <option value="noturgent">Not urgent</option>
+                  <option value="done">Done</option>
+
                 </select>
               </div>
               <button type="submit" className="button">Add</button>
@@ -29,8 +33,10 @@ class App extends Component {
           </div>
           <div className="container todo">
             <h1>Go surfing</h1>
-            <i class="far fa-edit"></i>
-            <i className="far fa-trash-alt"></i>
+            <div class="edit">
+              <i class="far fa-edit"></i>
+              <i className="far fa-trash-alt"></i>
+            </div>
           </div>
         </div>
       </div>
