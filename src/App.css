@@ -7,40 +7,80 @@
   list-style-type: none;
 }
 
-body {
+header {
+  background: #3B5159;
+  width: 50%;
+  margin: 1em auto 0 auto;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: inset 0px 0px 8px 5px #05AFF2;
+          box-shadow: inset 0px 0px 8px 5px #05AFF2;
+}
+
+header h1 {
+  color: #05AFF2;
+  font-size: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
   font-family: 'Raleway', sans-serif;
 }
 
 .wrap {
   position: relative;
   background-color: #3B5159;
-  width: 50vw;
-  margin: 10em auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60vw;
+  margin: 0 auto;
   padding: 2em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-box-shadow: inset 0px 0px 5px 2px #05AFF2;
-          box-shadow: inset 0px 0px 5px 2px #05AFF2;
+  -webkit-box-shadow: inset 0px 0px 8px 5px #05AFF2;
+          box-shadow: inset 0px 0px 8px 5px #05AFF2;
 }
 
 .wrap .container {
+  border: 1px solid red;
   background-color: #182226;
-  margin: 3em;
+  max-width: 30vw;
+  max-height: 30vh;
+  margin: 0 auto;
   padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
+.wrap .container .formGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1em;
+}
+
+.wrap .container .formGroup label {
+  color: #05C7F2;
+  font-family: 'Raleway', sans-serif;
+}
+
 .wrap .container .formGroup input[type="text"], .wrap .container .formGroup select {
-  font-size: 2em;
   color: #05C7F2;
   width: 100%;
   padding: .5em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: transparent;
-  -webkit-box-shadow: 0 0 2px 5px #05AFF2;
-          box-shadow: 0 0 2px 5px #05AFF2;
+  -webkit-box-shadow: 0 0 2px 2px #05AFF2;
+          box-shadow: 0 0 2px 2px #05AFF2;
+  font-family: 'Raleway', sans-serif;
 }
 
 .wrap .container .formGroup input[type="text"]:focus, .wrap .container .formGroup select:focus {
@@ -48,33 +88,42 @@ body {
 }
 
 .wrap .container .formGroup ::-webkit-input-placeholder {
-  color: #05C7F2;
+  color: rgba(5, 199, 242, 0.5);
 }
 
 .wrap .container .formGroup :-ms-input-placeholder {
-  color: #05C7F2;
+  color: rgba(5, 199, 242, 0.5);
 }
 
 .wrap .container .formGroup ::-ms-input-placeholder {
-  color: #05C7F2;
+  color: rgba(5, 199, 242, 0.5);
 }
 
 .wrap .container .formGroup ::placeholder {
-  color: #05C7F2;
+  color: rgba(5, 199, 242, 0.5);
 }
 
 .wrap .container .formGroup select {
-  margin: .5em 0;
+  margin: .5em 0 0 0;
+}
+
+.wrap .container .formGroup .first {
+  color: rgba(5, 199, 242, 0.5);
+}
+
+.wrap .container .formGroup .faded {
+  color: rgba(5, 199, 242, 0.5);
 }
 
 .wrap .container button[type="submit"] {
-  font-size: 1em;
   color: white;
   padding: .5em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: #05AFF2;
   cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .wrap .container button[type="submit"]:hover {
@@ -82,16 +131,71 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: transparent;
-  -webkit-box-shadow: 0 0 2px 5px #05AFF2;
-          box-shadow: 0 0 2px 5px #05AFF2;
+  -webkit-box-shadow: 0 0 1px 2px #05AFF2;
+          box-shadow: 0 0 1px 2px #05AFF2;
   color: #05C7F2;
 }
 
-.wrap .todo {
-  color: #05C7F2;
+.wrap .musicEntries {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.wrap .todo .edit {
+.wrap .musicEntries .entry {
+  padding: .5em;
+  color: #05C7F2;
+  font-family: 'Raleway', sans-serif;
+  background: #182226;
+  border-radius: 5px;
+  margin: .15em;
+}
+
+.wrap .musicEntries .entry .constants {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: .5em;
+  color: #A4BDBF;
+}
+
+.wrap .musicEntries .entry .entries {
+  font-size: .75em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin: 0 0 1em 0;
+}
+
+.wrap .musicEntries .entry .entries h3 {
+  margin-right: 1em;
+}
+
+.wrap .musicEntries .entry .label {
+  margin: .5em auto;
+  text-align: center;
+}
+
+.wrap .musicEntries .entry .label img {
+  width: 100px;
+  height: 100px;
+}
+
+.wrap .musicEntries .entry .edit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -100,7 +204,7 @@ body {
           justify-content: space-between;
 }
 
-.wrap .todo .edit i {
-  font-size: 2em;
+.wrap .musicEntries .entry .edit i {
+  color: #A4BDBF;
 }
 /*# sourceMappingURL=App.css.map */
