@@ -8,14 +8,17 @@
 }
 
 header {
-  background: #3B5159;
-  width: 50%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #182226;
+  width: 60%;
   margin: 1em auto 0 auto;
   padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-box-shadow: inset 0px 0px 8px 5px #05AFF2;
-          box-shadow: inset 0px 0px 8px 5px #05AFF2;
+  border-radius: 5px 5px 0 0;
 }
 
 header h1 {
@@ -33,7 +36,7 @@ header h1 {
   display: -ms-flexbox;
   display: flex;
   width: 60vw;
-  margin: 0 auto;
+  margin: -1em auto 2em auto;
   padding: 2em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -42,17 +45,21 @@ header h1 {
 }
 
 .wrap .container {
-  border: 1px solid red;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5em;
+  z-index: 11;
   background-color: #182226;
-  max-width: 30vw;
-  max-height: 30vh;
-  margin: 0 auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 1em 0 0;
   padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.wrap .container .formGroup {
+.wrap .container form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,17 +70,20 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 1em;
 }
 
-.wrap .container .formGroup label {
+.wrap .container form .formGroup {
+  margin: .5em 0;
+  width: 100%;
+}
+
+.wrap .container form .formGroup label {
   color: #05C7F2;
   font-family: 'Raleway', sans-serif;
 }
 
-.wrap .container .formGroup input[type="text"], .wrap .container .formGroup select {
+.wrap .container form .formGroup input[type="text"], .wrap .container form .formGroup select {
   color: #05C7F2;
-  width: 100%;
   padding: .5em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -83,57 +93,60 @@ header h1 {
   font-family: 'Raleway', sans-serif;
 }
 
-.wrap .container .formGroup input[type="text"]:focus, .wrap .container .formGroup select:focus {
+.wrap .container form .formGroup input[type="text"]:focus, .wrap .container form .formGroup select:focus {
   outline: none;
 }
 
-.wrap .container .formGroup ::-webkit-input-placeholder {
+.wrap .container form .formGroup ::-webkit-input-placeholder {
   color: rgba(5, 199, 242, 0.5);
 }
 
-.wrap .container .formGroup :-ms-input-placeholder {
+.wrap .container form .formGroup :-ms-input-placeholder {
   color: rgba(5, 199, 242, 0.5);
 }
 
-.wrap .container .formGroup ::-ms-input-placeholder {
+.wrap .container form .formGroup ::-ms-input-placeholder {
   color: rgba(5, 199, 242, 0.5);
 }
 
-.wrap .container .formGroup ::placeholder {
+.wrap .container form .formGroup ::placeholder {
   color: rgba(5, 199, 242, 0.5);
 }
 
-.wrap .container .formGroup select {
+.wrap .container form .formGroup select {
+  padding: .15em;
+  width: 100%;
+}
+
+.wrap .container form .formGroup .first {
+  color: rgba(5, 199, 242, 0.5);
   margin: .5em 0 0 0;
 }
 
-.wrap .container .formGroup .first {
-  color: rgba(5, 199, 242, 0.5);
+.wrap .container form .formGroup .faded {
+  color: red;
 }
 
-.wrap .container .formGroup .faded {
-  color: rgba(5, 199, 242, 0.5);
-}
-
-.wrap .container button[type="submit"] {
-  color: white;
+.wrap .container form button[type="submit"] {
+  color: #05C7F2;
   padding: .5em;
+  background: transparent;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #05AFF2;
+  -webkit-box-shadow: 0 0 1px 2px #05AFF2;
+          box-shadow: 0 0 1px 2px #05AFF2;
   cursor: pointer;
   border-radius: 5px;
   font-family: 'Raleway', sans-serif;
+  margin: .5em auto 0 auto;
 }
 
-.wrap .container button[type="submit"]:hover {
-  padding: .5em;
+.wrap .container form button[type="submit"]:hover {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: transparent;
-  -webkit-box-shadow: 0 0 1px 2px #05AFF2;
-          box-shadow: 0 0 1px 2px #05AFF2;
-  color: #05C7F2;
+  color: #182226;
+  background: #05AFF2;
+  font-weight: 700;
 }
 
 .wrap .musicEntries {
@@ -145,15 +158,30 @@ header h1 {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .wrap .musicEntries .entry {
   padding: .5em;
-  color: #05C7F2;
   font-family: 'Raleway', sans-serif;
   background: #182226;
   border-radius: 5px;
   margin: .15em;
+}
+
+.wrap .musicEntries .entry h5 {
+  color: #05AFF2;
+  font-weight: 700;
+  padding: 0 .5em;
+}
+
+.wrap .musicEntries .entry h4 {
+  color: #A4BDBF;
+  font-size: .75em;
+  padding: 0 .5em;
+  font-weight: 300;
 }
 
 .wrap .musicEntries .entry .constants {
@@ -163,12 +191,10 @@ header h1 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: .5em;
   color: #A4BDBF;
 }
 
 .wrap .musicEntries .entry .entries {
-  font-size: .75em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -181,18 +207,18 @@ header h1 {
   margin: 0 0 1em 0;
 }
 
-.wrap .musicEntries .entry .entries h3 {
-  margin-right: 1em;
-}
-
-.wrap .musicEntries .entry .label {
-  margin: .5em auto;
+.wrap .musicEntries .entry .favAlbum {
+  margin: .15em auto;
   text-align: center;
 }
 
-.wrap .musicEntries .entry .label img {
+.wrap .musicEntries .entry .favAlbum img {
   width: 100px;
   height: 100px;
+}
+
+.wrap .musicEntries .entry .favSong {
+  margin-bottom: .15em;
 }
 
 .wrap .musicEntries .entry .edit {
@@ -204,7 +230,7 @@ header h1 {
           justify-content: space-between;
 }
 
-.wrap .musicEntries .entry .edit i {
-  color: #A4BDBF;
+.wrap .musicEntries .entry .edit .fa-trash-alt {
+  color: red;
 }
 /*# sourceMappingURL=App.css.map */
