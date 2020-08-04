@@ -8,29 +8,44 @@ class App extends Component {
     super(props)
 
     this.state = {
-      NewEntry:[
-        {
-          // id: Date.now(),
-          id: 1,
-          favMusician: 'Chris Cornell',
-          genre: 'Rock',
-          favAlbum: 'Higher Truth',
-          favSong: 'Dead wishes',
-        },
-        {
-          // id: Date.now(),
-          id: 2,
-          favMusician: 'Pearl Jam',
-          genre: 'Rock',
-          favAlbum: 'Ten',
-          favSong: 'Jeremy',
-        },
+      entries:[
+        // {
+        //   // id: Date.now(),
+        //   id: 1,
+        //   favMusician: 'Chris Cornell',
+        //   genre: 'Rock',
+        //   favAlbum: 'Higher Truth',
+        //   favSong: 'Dead wishes',
+        // },
+        // {
+        //   // id: Date.now(),
+        //   id: 2,
+        //   favMusician: 'Pearl Jam',
+        //   genre: 'Heavy metal',
+        //   favAlbum: 'Ten',
+        //   favSong: 'Jeremy',
+        // },
+        // {
+        //   // id: Date.now(),
+        //   id: 3,
+        //   favMusician: 'Pearl Jam',
+        //   genre: 'Heavy metal',
+        //   favAlbum: 'Ten',
+        //   favSong: 'Jeremy',
+        // },
       ]
     }
-
   }
 
+  addEntry = (data) => {
+    var newEntry = {
+      id:Date.now(),
+      ...data
+    }
 
+    var newList = [newEntry, ...this.state.entries]
+    this.setState({entries:newList})
+  }
 
   render() {
     return (
@@ -43,14 +58,23 @@ class App extends Component {
         <div className="wrap">
 
           <div className="container">
-
-            <NewEntry />
-
+            <NewEntry addEntry={this.addEntry}/>
           </div>
 
           <div className="musicEntries">
-            <Entry />
-            this.state.NewEntry.map()
+            {
+              this.state.entries.map((entry) => {//This is mapping
+                var entryProps = {
+                  ...entry,
+                  key: entry.id,
+
+                }
+                return(
+                  <Entry {...entryProps}/>
+                )
+              })
+            }
+       
           </div>
 
         </div>

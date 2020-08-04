@@ -21,8 +21,29 @@ class NewEntry extends Component {
     }
 
     handleFavMusicianInputChange = (e) => {
-        console.log('change')
         this.setState({favMusicianInput: e.target.value})
+    }
+
+    handleGenreInputChange = (e) => {
+        this.setState({genreInput: e.target.value})
+    }
+
+    handleFavAlbum = (e) => {
+        this.setState({favAlbumInput: e.target.value})
+    }
+
+    handleFavSong = (e) => {
+        this.setState({favSongInput: e.target.value})
+    }
+
+    handleClick = (e) => {
+        e.preventDefault()
+        var data = {
+            favMusician: this.state.favMusicianInput,
+            genre: this.state.genreInput,
+            favSong: this.state.favSongInput,
+        }
+        this.props.newEntries(data)
     }
 
 
@@ -37,11 +58,11 @@ class NewEntry extends Component {
 
                 <div className="formGroup genre">
                     <label htmlFor="genre"></label>
-                    <select name="genre" id="genre" className="genreClasss">
-                        <option value="genre" selected="selected" disabled="disabled" className="first" onChange={this.handleGenreChange}>Genre </option>
+                    <select name="genre" id="genre" className="genreClasss" onChange={this.handleGenreInputChange}>
+                        <option value="genre" selected="selected" disabled="disabled" className="first">Genre </option>
                         <option value="rock">Rock</option>
                         <option value="classic">Classic</option>
-                        <option value="dub">Blues</option>
+                        <option value="blues">Blues</option>
                         <option value="dub">Dub</option>
                         <option value="soul">Soul</option>
                         <option value="rap">Rap</option>
@@ -50,15 +71,15 @@ class NewEntry extends Component {
 
                 <div className="formGroup favAlbum">
                     <label htmlFor="favMusic"></label>
-                    <input type="text" id="favAlbum" placeholder="Your favorit album" />
+                    <input type="text" id="favAlbum" placeholder="Your favorit album" onChange={this.handleFavAlbum}/>
                 </div>
 
                 <div className="formGroup favAlbum">
                     <label htmlFor="favMusic"></label>
-                    <input type="text" id="favAlbum" placeholder="Your favorit song" />
+                    <input type="text" id="favAlbum" placeholder="Your favorit song" onChange={this.handleFavSong}/>
                 </div>
 
-                <button type="submit" className="button">Add</button>
+                <button type="submit" className="button" onClick={this.handleClick}>Add</button>
 
             </form>
         )
