@@ -163,7 +163,11 @@ header{
                 h5{
                     color: $color1;
                     font-weight: 700;
-                    // padding: 0 .5em;
+                    height: 2em;
+                    background: rgba($color: $color1, $alpha: .25);
+                    padding: .15em;
+                    box-sizing: border-box;
+                    align-items: center;
                     }
 
                 h4{

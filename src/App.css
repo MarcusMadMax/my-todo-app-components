@@ -199,6 +199,14 @@ header h1 {
 .wrap .musicEntries .entries .info h5 {
   color: #05AFF2;
   font-weight: 700;
+  height: 2em;
+  background: rgba(5, 175, 242, 0.25);
+  padding: .15em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .wrap .musicEntries .entries .info h4 {

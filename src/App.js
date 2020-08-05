@@ -25,9 +25,9 @@ class App extends Component {
   }
 
   removeEntry = (id) => {
-    var entries = this.state.entries
-    var filtered = entries.filter((entry) => {
-      return CustomElementRegistry.id != id
+    var remove = this.state.entries
+    var filtered = remove.filter((entry) => {
+      return entry.id != id
     })
 
     this.setState({
@@ -35,15 +35,15 @@ class App extends Component {
     })
   }
 
-  // updateEntry = (id,data) => {
-  //   var entries = this.state.entries
-  //   var update = entries.map((entry) => {
-  //     return(entry.id ===id) ? {...entries,...data} : entry
-  //   })
-  //   this.setState({
-  //     entries:update
-  //   })
-  // }
+  updateEntry = (id,data) => {
+    var entries = this.state.entries
+    var update = entries.map((entry) => {
+      return(entry.id ===id) ? {...entries,...data} : entry
+    })
+    this.setState({
+      entries:update
+    })
+  }
 
   render() {
     return (
