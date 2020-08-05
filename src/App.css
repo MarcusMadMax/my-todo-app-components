@@ -124,7 +124,7 @@ header h1 {
 }
 
 .wrap .container form .formGroup .faded {
-  color: red;
+  color: rgba(5, 199, 242, 0.5);
 }
 
 .wrap .container form button[type="submit"] {
@@ -187,6 +187,7 @@ header h1 {
 
 .wrap .musicEntries .entries .edit .fa-trash-alt {
   color: red;
+  cursor: pointer;
 }
 
 .wrap .musicEntries .entries .info {

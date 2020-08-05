@@ -6,12 +6,17 @@ class Entry extends Component {
 
     }
 
+    handleRemoveClick = (e) => {
+        var id = this.props.id
+        this.props.removeEntry(id)
+    }
+
     render() {
         return (
             <div className="entries">
                 <div className="edit">
                     <i className="far fa-edit"></i>
-                    <i className="far fa-trash-alt"></i>
+                    <i className="far fa-trash-alt" onClick={this.handleRemoveClick}></i>
                 </div>
                 <div className="info">
                     <div className="constants">

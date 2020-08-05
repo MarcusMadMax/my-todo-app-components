@@ -9,30 +9,7 @@ class App extends Component {
 
     this.state = {
       entries:[
-        // {
-        //   // id: Date.now(),
-        //   id: 1,
-        //   favMusician: 'Chris Cornell',
-        //   genre: 'Rock',
-        //   favAlbum: 'Higher Truth',
-        //   favSong: 'Dead wishes',
-        // },
-        // {
-        //   // id: Date.now(),
-        //   id: 2,
-        //   favMusician: 'Pearl Jam',
-        //   genre: 'Heavy metal',
-        //   favAlbum: 'Ten',
-        //   favSong: 'Jeremy',
-        // },
-        // {
-        //   // id: Date.now(),
-        //   id: 3,
-        //   favMusician: 'Pearl Jam',
-        //   genre: 'Heavy metal',
-        //   favAlbum: 'Ten',
-        //   favSong: 'Jeremy',
-        // },
+        
       ]
     }
   }
@@ -46,6 +23,27 @@ class App extends Component {
     var newList = [newEntry, ...this.state.entries]
     this.setState({entries:newList})
   }
+
+  removeEntry = (id) => {
+    var entries = this.state.entries
+    var filtered = entries.filter((entry) => {
+      return CustomElementRegistry.id != id
+    })
+
+    this.setState({
+      entries: filtered
+    })
+  }
+
+  // updateEntry = (id,data) => {
+  //   var entries = this.state.entries
+  //   var update = entries.map((entry) => {
+  //     return(entry.id ===id) ? {...entries,...data} : entry
+  //   })
+  //   this.setState({
+  //     entries:update
+  //   })
+  // }
 
   render() {
     return (
@@ -67,7 +65,7 @@ class App extends Component {
                 var entryProps = {
                   ...entry,
                   key: entry.id,
-
+                  removeEntry: this.removeEntry
                 }
                 return(
                   <Entry {...entryProps}/>

@@ -104,7 +104,7 @@ header{
                 }
 
                 .faded{
-                    color:red;
+                    color: rgba($color: $color2, $alpha: .5);
                 }
 
             }
@@ -153,6 +153,7 @@ header{
 
                 .fa-trash-alt{
                     color: red;
+                    cursor: pointer;
                 }
             }
 

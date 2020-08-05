@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 class NewEntry extends Component {
     constructor(props) {
         super(props)
-        this.State = {
-            genreClass6: 'faded',
+        this.state = {
+            genreClass: 'faded',
 
             favMusicianInput: '',
             genreInput: '',
@@ -25,7 +25,10 @@ class NewEntry extends Component {
     }
 
     handleGenreInputChange = (e) => {
-        this.setState({genreInput: e.target.value})
+        this.setState({
+            genreInput: e.target.value,
+            genreClass:''
+        })
     }
 
     handleFavAlbum = (e) => {
@@ -43,7 +46,7 @@ class NewEntry extends Component {
             genre: this.state.genreInput,
             favSong: this.state.favSongInput,
         }
-        this.props.newEntries(data)
+        this.props.addEntry(data)
     }
 
 
@@ -58,14 +61,14 @@ class NewEntry extends Component {
 
                 <div className="formGroup genre">
                     <label htmlFor="genre"></label>
-                    <select name="genre" id="genre" className="genreClasss" onChange={this.handleGenreInputChange}>
-                        <option value="genre" selected="selected" disabled="disabled" className="first">Genre </option>
-                        <option value="rock">Rock</option>
-                        <option value="classic">Classic</option>
-                        <option value="blues">Blues</option>
-                        <option value="dub">Dub</option>
-                        <option value="soul">Soul</option>
-                        <option value="rap">Rap</option>
+                    <select name="genre" id="genre" className={this.state.genreClass} onChange={this.handleGenreInputChange}>
+                        <option value="Genre" selected="selected" disabled="disabled" className="first">Genre </option>
+                        <option value="Rock">Rock</option>
+                        <option value="Classic">Classic</option>
+                        <option value="Blues">Blues</option>
+                        <option value="Dub">Dub</option>
+                        <option value="Soul">Soul</option>
+                        <option value="Rap">Rap</option>
                     </select>
                 </div>
 
